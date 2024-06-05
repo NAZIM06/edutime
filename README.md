@@ -1,6 +1,12 @@
 # edutime
 # Live Link: https://project-alpha-c5335.web.app/
 
+## Commands:
+* npm install install all dependencies for the server and the client.
+* npm run build builds the static files for the React app.
+* npm start starts the complete MERN app.
+* npm run react-dev starts the React app in development mode on http://localhost:3000. Only works if the server is started separately. Alternatively you can just use npm start from the client folder.
+
 ## Key Features:
 * every new user will be a student by default.
 * Only instructors can add classes from his/her Dashboard. 
