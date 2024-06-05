@@ -35,6 +35,21 @@ const AuthProvider = ({ children }) => {
             photoURL: photo
         })
     };
+// Update user profile function
+const updateUserProfile = ({ displayName, email, photoURL }) => {
+    return updateProfile(auth.currentUser, {
+        displayName,
+        photoURL
+    }).then(() => {
+        // Optionally, you might want to update the email separately
+        if (email && email !== auth.currentUser.email) {
+            return auth.currentUser.updateEmail(email);
+        }
+    }).then(() => {
+        // Update local user state
+        setUser({ ...auth.currentUser });
+    });
+};
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -69,7 +84,9 @@ const AuthProvider = ({ children }) => {
         googleSignInUser,
         loading,
         setLoading,
-        updateUser
+        updateUser,
+        updateUserProfile
+        
     };
     return (
         <AuthContext.Provider value={authInfo}>

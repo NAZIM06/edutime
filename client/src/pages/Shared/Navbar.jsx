@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import Tools from "./Tools";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
-  const location = useLocation()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, signOutUser } = useContext(AuthContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { user, signOutUser, updateUserProfile } = useContext(AuthContext);
+  const [displayName, setDisplayName] = useState(user?.displayName || "");
+  const [email, setEmail] = useState(user?.email || "");
+  const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -17,8 +20,23 @@ const Navbar = () => {
     signOutUser()
       .then(() => { })
       .catch(error => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
+        console.log(error.message);
+      });
+  };
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    updateUserProfile({
+      displayName: displayName || user.displayName,
+      email: email || user.email,
+      photoURL: photoURL || user.photoURL
+    })
+      .then(() => {
+        alert("Profile updated successfully!");
+        setIsModalOpen(false);
+      })
+      .catch(error => {
+        console.error(error.message);
       });
   };
 
@@ -26,13 +44,19 @@ const Navbar = () => {
     if (user) {
       return (
         <div className="flex items-center space-x-2 md:space-x-4">
-          <Tools text={user.displayName}>
+          <Tools text={`${user.displayName} ${user.email}`}>
             {user.photoURL ? (
               <img className="rounded-full h-6 w-6" src={user.photoURL} alt="" />
             ) : (
               <HiOutlineUserCircle className="h-8 w-8" />
             )}
           </Tools>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-2 px-4 rounded-md"
+          >
+            Update
+          </button>
           <button
             onClick={handleSignOut}
             className="bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-2 px-4 rounded-md"
@@ -57,7 +81,6 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className=" flex items-center justify-between h-16">
           <div className="flex items-center">
-
             <Link to="/" className="text-white text-4xl font-bold">
               <span className="text-[#FF1949]">Edu</span>time
             </Link>
@@ -77,7 +100,7 @@ const Navbar = () => {
               <NavLink to="/support" className="text-white">
                 Support
               </NavLink>
-              {user && <NavLink to={'/dashboard'} className="text-white">Dashboard</NavLink>}
+              {user && <NavLink to="/dashboard" className="text-white">Dashboard</NavLink>}
               {renderAuthButtons()}
             </div>
           </div>
@@ -156,7 +179,59 @@ const Navbar = () => {
             >
               Support
             </NavLink>
-            {user && <NavLink to={'/dashboard'} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Dashboard</NavLink>}
+            {user && <NavLink to="/dashboard" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Dashboard</NavLink>}
+          </div>
+        </div>
+      )}
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-4">Update Profile</h2>
+            <form onSubmit={handleUpdate}>
+              <div className="mb-4">
+                <label className="block text-gray-700">Username</label>
+                <input
+                  type="text"
+                  value={displayName}
+                  onChange={(e) => setDisplayName(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Email</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-md"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Profile Image URL</label>
+                <input
+                  type="text"
+                  value={photoURL}
+                  onChange={(e) => setPhotoURL(e.target.value)}
+                  className="w-full px-4 py-2 border rounded-md"
+                />
+              </div>
+              <div className="flex justify-end space-x-4">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-md"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-2 px-4 rounded-md"
+                >
+                  Update
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
