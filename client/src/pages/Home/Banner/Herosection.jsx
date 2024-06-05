@@ -16,10 +16,10 @@ const Herosection = () => {
             </h1>
           </div>
           <div className="flex flex-wrap gap-2 mt-4 justify-center lg:justify-start">
-            <span className="bg-[#67768F] text-white px-6 py-2.5 rounded-md text-xs">Category:</span>
-            <span className="bg-[#67768F] text-white px-6 py-2.5 rounded-md text-xs">Wordpress</span>
-            <span className="bg-[#67768F] text-white px-6 py-2.5 rounded-md text-xs">Web Design</span>
-            <span className="bg-[#67768F] text-white px-6 py-2.5 rounded-md text-xs">Marketing</span>
+            <span className="bg-[#FF1949] text-white px-6 py-2.5 rounded-md text-sm font-semibold">Category:</span>
+            <span className="bg-[#FF1949] text-white px-6 py-2.5 rounded-md text-sm font-semibold">Wordpress</span>
+            <span className="bg-[#FF1949] text-white px-6 py-2.5 rounded-md text-sm font-semibold">Web Design</span>
+            <span className="bg-[#FF1949] text-white px-6 py-2.5 rounded-md text-sm font-semibold">Marketing</span>
           </div>
         </div>
 

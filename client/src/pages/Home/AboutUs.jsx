@@ -12,7 +12,7 @@ const AboutUs = () => {
     <div>
       <div className="max-w-screen-lg mx-auto py-6">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">What will you learn?</h1>
+          <h1 className="text-4xl font-bold mb-4">What will you get?</h1>
           <div className="border-t-2 border-red-500 w-16 mx-auto my-4"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10" data-aos="zoom-in">
