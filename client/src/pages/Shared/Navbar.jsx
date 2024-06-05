@@ -134,29 +134,29 @@ const Navbar = () => {
             {renderAuthButtons()}
             <NavLink
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800"
             >
               Home
             </NavLink>
             <NavLink
               to="/instructors"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800"
             >
               Instructors
             </NavLink>
             <NavLink
               to="/classes"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800"
             >
               Classes
             </NavLink>
             <NavLink
               to="/support"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800"
             >
               Support
             </NavLink>
-            {user && <NavLink to={'/dashboard'} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Dashboard</NavLink>}
+            {user && <NavLink to={'/dashboard'} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">Dashboard</NavLink>}
           </div>
         </div>
       )}

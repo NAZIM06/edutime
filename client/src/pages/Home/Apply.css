@@ -1,0 +1,8 @@
+<style>
+  @media (max-width: 767px) {
+    .bg-img {
+      background-image: none;
+      background-color: #FF1949;
+    }
+  }
+</style>

@@ -12,7 +12,7 @@ const Home = () => {
     <div>
       <Herosection/>
       <Banner2></Banner2>
-      <div className='py-20'><PopularInstructors /></div>
+      <div className='py-10'><PopularInstructors /></div>
       <PopularClasses />
       <AboutUs></AboutUs>
       <Apply/>

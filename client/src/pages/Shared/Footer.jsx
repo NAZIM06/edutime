@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <p>&copy; 2023 - All rights reserved by EduTime</p>
+          <p>&copy; 2024 - All rights reserved by EduTime</p>
         </div>
       </footer>
       

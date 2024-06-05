@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaChalkboardTeacher, FaRegFileAlt, FaHeadphones, FaRocket, FaArrowRight } from 'react-icons/fa';
 const Banner2 = () => {
     return (
-        <section className="bg-white py-16 min-h-screen">
+        <section className="bg-white  min-h-screen">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="flex flex-col justify-center">
@@ -14,11 +14,10 @@ const Banner2 = () => {
                             Learn new skills to go ahead for your career
                         </h2>
                         <p className="text-gray-600 text-lg mb-8">
-                            Asperiores excepturi explicabo esse nisi molestias molestiae magni porro magnam, iusto sunt aliquid necessitatibus optio quod iste.
-                        </p>
+                            I'll explain that it's going to be tougher, unless it's a big problem, they're just something that needs an option that this one.                        </p>
                         <Link to="/learn-more" className="w-[40%] text-center bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-3 px-8 rounded-md flex items-center justify-center">
-            Learn More <FaArrowRight className="ml-2" />
-          </Link>
+                            Learn More <FaArrowRight className="ml-2" />
+                        </Link>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div className="p-8 border border-gray-200 rounded-lg text-center">

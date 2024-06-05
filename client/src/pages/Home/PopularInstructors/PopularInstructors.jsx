@@ -14,8 +14,12 @@ const PopularInstructors = () => {
     })
     // console.log(instructors)
     return (
-        <div className='px-6 md:px-10 mb-10 mx-auto w-11/12'>
-        <p className='text-5xl font-extrabold mb-10 text-blue-900 text-center'>Popular Instructors</p>
+        <div className='px-6 md:px-10 my-10 mx-auto w-11/12'>
+        <div className="text-center mb-12">
+                <h1 className="text-4xl font-bold mb-4">Popular Instructors</h1>
+                <div className="border-t-2 border-red-500 w-16 mx-auto my-4"></div>
+                <p className="text-gray-600">We learn from every student who is in our class because learning is a two-way process.</p>
+            </div>
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
                 instructors.slice(0, 6).map(instructor =>

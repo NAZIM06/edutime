@@ -55,8 +55,13 @@ const PopularClasses = () => {
       })
   }
   return (
-    <div className="md:p-10 my-10 mx-auto w-11/12">
-      <p className="text-5xl font-extrabold mb-12 text-blue-900 text-center">Popular Classes</p>
+    <div className="md:p-10 mb-5 mx-auto w-11/12">
+          <div className="text-center mb-12">
+                <h1 className="text-4xl font-bold mb-4">Popular Classes</h1>
+                <div className="border-t-2 border-red-500 w-16 mx-auto my-4"></div>
+                <p className="text-gray-600">Develop a passion for learning. If you do, you would never cease to grow. We
+fuel your passion at Online Learning!</p>
+            </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-5 justify-center">
         {classData.slice(0, 6).map((classes) => (
           <div key={classes._id} className={`card w-full group shadow-lg rounded-lg overflow-hidden  ${classes.seats === 0 && 'bg-red-600'}`}>
