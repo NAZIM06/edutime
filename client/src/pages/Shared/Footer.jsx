@@ -15,7 +15,7 @@ const Footer = () => {
           <p>
             Important Links:{" "}
             <Link to="/instructors">Instractors</Link> |{" "}
-            <Link to="/classes">Classes</Link> |{" "}
+            <Link to="/classes">Courses</Link> |{" "}
           </p>
         </div>
         <div>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { FaChalkboardTeacher, FaHeadphones, FaRegFileAlt } from 'react-icons/fa';
 
 
 const AboutUs = () => {
@@ -16,19 +17,21 @@ const AboutUs = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10" data-aos="zoom-in">
   <div className="w-full md:w-80 h-auto rounded-lg shadow-md p-4 text-center bg-slate-50 mx-auto mb-4 md:mb-0">
-    <img src="https://i.ibb.co/RHLpJxm/megaphone-icon-0-removebg-preview.png" alt="Logo" className="w-20 h-20 mx-auto" />
-    <h2 className="text-lg text-blue-700 font-bold mb-2">Speak</h2>
-    <p className="text-gray-500">Speak with native speakers on any topic you want (not just about the weather). Make friends in different parts of the Earth!</p>
+  <FaChalkboardTeacher className="text-4xl text-red-500 mb-6 mx-auto" />
+                            <h3 className="text-2xl font-semibold mb-4">Learn from Experts</h3>
+    <p className="text-gray-500">Stay motivated with engaging instructors</p>
   </div>
   <div className="w-full md:w-80 h-auto rounded-lg shadow-md p-4 text-center bg-slate-50 mx-auto mb-4 md:mb-0">
-    <img src="https://i.ibb.co/xS8JFVg/images-removebg-preview.png" alt="Logo" className="w-20 h-20 mx-auto" />
-    <h2 className="text-lg text-blue-700 font-bold mb-2">Read</h2>
-    <p className="text-gray-500">Read literature in the original language. Grow your vocabulary, master the language’s grammar, and broaden your horizons!</p>
+  <FaRegFileAlt className="text-4xl text-red-500 mb-6 mx-auto" />
+                            <h3 className="text-2xl font-semibold mb-4">Learn the Latest Top Skills</h3>
+    <p className="text-gray-500">
+Build skills your way, from labs to courses</p>
   </div>
   <div className="w-full md:w-80 h-auto rounded-lg shadow-md p-4 text-center bg-slate-50 mx-auto">
-    <img src="https://i.ibb.co/j43FxyZ/images-removebg-preview-1.png" alt="Logo" className="w-20 h-20 mx-auto" />
-    <h2 className="text-lg text-blue-700 font-bold mb-2">Understand</h2>
-    <p className="text-gray-500">Understand new things about the foreign country, its culture and traditions. Feel yourself like a piece of something global!</p>
+  <FaHeadphones className="text-4xl text-red-500 mb-6 mx-auto" />
+                            <h3 className="text-2xl font-semibold mb-4">Lifetime Access & Support</h3>
+    <p className="text-gray-500">
+Keep up with in the latest in cloud</p>
   </div>
 </div>
 

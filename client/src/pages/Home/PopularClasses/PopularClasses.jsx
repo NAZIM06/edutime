@@ -57,7 +57,7 @@ const PopularClasses = () => {
   return (
     <div className="md:p-10 mb-5 mx-auto w-11/12">
           <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold mb-4">Popular Classes</h1>
+                <h1 className="text-4xl font-bold mb-4">Popular Courses</h1>
                 <div className="border-t-2 border-red-500 w-16 mx-auto my-4"></div>
                 <p className="text-gray-600">Develop a passion for learning. If you do, you would never cease to grow. We
 fuel your passion at Online Learning!</p>

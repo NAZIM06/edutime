@@ -7,6 +7,8 @@ import { useAuth } from '../../components/Hooks/useAuth';
 const Classes = () => {
     const { user } = useAuth();
     const [currentUser, setCurrentUser] = useState({});
+    const [searchQuery, setSearchQuery] = useState('');
+
     const { data: allClasses = [], refetch } = useQuery({
         queryKey: ['all-classes'],
         queryFn: async () => {
@@ -44,13 +46,29 @@ const Classes = () => {
                     });
                 }
             });
-    }
+    };
+
+    // Filter classes based on search query
+    const filteredClasses = allClasses.filter(classes =>
+        classes.className.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        classes.instructorName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
         <div className='md:p-10 my-10 mx-auto w-11/12'>
-            <p className='text-3xl font-bold mb-10 text-center'>All Classes</p>
+            <div className="text-center mb-12">
+                <h1 className="text-4xl font-bold mb-4">All Courses</h1>
+                <div className="border-t-2 border-red-500 w-16 mx-auto my-4"></div>
+                <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search by class or instructor name"
+                    className="mt-4 px-4 py-2 border-2 border-[#263B5E] rounded-md w-full md:w-1/2 mx-auto"
+                />
+            </div>
             <div className='grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-5 justify-center'>
-                {allClasses.map((classes) =>
+                {filteredClasses.map((classes) =>
                     <div key={classes._id} className={`card w-full group shadow-lg rounded-lg overflow-hidden ${classes.seats === 0 ? 'bg-red-600' : 'bg-white'}`}>
                         <figure className="overflow-hidden">
                             <img className='w-full h-60 object-cover group-hover:scale-110 transition-transform duration-300' src={classes.image} alt="class" />

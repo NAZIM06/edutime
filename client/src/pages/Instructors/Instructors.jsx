@@ -18,7 +18,10 @@ const Instructors = () => {
             </Helmet>
             <div className='w-full flex justify-center my-10'>
                 <div className='max-w-screen-lg'>
-                    <p className='mb-12 text-2xl text-center font-bold'>All Instructors</p>
+                <div className="text-center mb-12">
+                <h1 className="text-4xl font-bold mb-4">All Instructors</h1>
+                <div className="border-t-2 border-red-500 w-16 mx-auto my-4"></div>
+            </div>
                     <div className='grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-5 mx-auto'>
                         {
                             allInstructors.map(instructor =>
