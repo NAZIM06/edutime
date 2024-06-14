@@ -11,7 +11,7 @@ const Herosection = () => {
             <span className="uppercase font-semibold">Expert Instruction</span>
           </div>
           <div className='mb-7 text-center lg:text-left'>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
               Online Coaching <br /> Lessons Remote <br /> Learning
             </h1>
           </div>

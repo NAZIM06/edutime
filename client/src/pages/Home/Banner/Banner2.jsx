@@ -15,7 +15,7 @@ const Banner2 = () => {
                         </h2>
                         <p className="text-gray-600 text-lg mb-8">
                             I'll explain that it's going to be tougher, unless it's a big problem, they're just something that needs an option that this one.                        </p>
-                        <Link to="/learn-more" className="w-[40%] text-center bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-3 px-8 rounded-md flex items-center justify-center">
+                        <Link to="/" className="w-[40%] text-center bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-3 px-8 rounded-md flex items-center justify-center">
                             Learn More <FaArrowRight className="ml-2" />
                         </Link>
                     </div>
