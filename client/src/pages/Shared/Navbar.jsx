@@ -45,14 +45,15 @@ const Navbar = () => {
     if (user) {
       return (
         <div className="flex items-center space-x-2 md:space-x-4">
-          <div  onClick={() => setIsModalOpen(true)}> 
-          <Tools text={`${user.displayName} ${user.email} [Click here to edit.]`} >
+
+          <Tools text={`${user.displayName} ${user.email}`} >
             {user.photoURL ? (
               <img className="rounded-full h-6 w-6" src={user.photoURL} alt="" />
             ) : (
               <HiOutlineUserCircle className="h-8 w-8" />
             )}
-          </Tools></div>
+          </Tools>
+          <button onClick={() => setIsModalOpen(true)} className="bg-[#385777] text-white font-bold py-2 px-4 rounded-md" >Update info</button>
           <button
             onClick={handleSignOut}
             className="bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-2 px-4 rounded-md"
