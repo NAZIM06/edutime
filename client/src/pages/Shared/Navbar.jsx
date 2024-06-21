@@ -53,7 +53,7 @@ const Navbar = () => {
               <HiOutlineUserCircle className="h-8 w-8" />
             )}
           </Tools>
-          <button onClick={() => setIsModalOpen(true)} className="bg-[#385777] text-white font-bold py-2 px-4 rounded-md" >Update info</button>
+          <button onClick={() => setIsModalOpen(true)} className="bg-[#385777] text-white font-mono text-sm py-1 px-2 rounded-md" >Update info</button>
           <button
             onClick={handleSignOut}
             className="bg-[#FF1949] hover:bg-[#385777] text-white font-bold py-2 px-4 rounded-md"
